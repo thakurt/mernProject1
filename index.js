@@ -10,6 +10,8 @@ const catRouter = require('./routes/categories')
 const multer = require('multer')
 const path = require('path')
 const bodyParser = require("body-parser")
+const cors = require('cors')
+
 
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -17,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
-
+app.use(cors())
 
 dotenv.config()
 app.use(express.json())
